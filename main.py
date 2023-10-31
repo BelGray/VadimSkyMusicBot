@@ -37,6 +37,8 @@ timeout = PlayTimeout(120)
 
 
 async def on_startup(dispatcher):
+    if not os.path.exists('music'):
+        os.mkdir('music')
     log.s('on_startup', 'Successfully connected to: Telegram API')
     await set_default_commands(dispatcher)
 
